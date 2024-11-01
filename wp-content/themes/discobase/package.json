@@ -1,7 +1,7 @@
 {
   "name": "discobase",
   "version": "1.0.0",
-  "description": "A record tracking and review database",
+  "description": "A record collection and review database blog",
   "main": "index.js",
   "scripts": {
     "watch": "sass --watch ./sass/main.scss ./style.css"
@@ -12,10 +12,11 @@
   },
   "keywords": [
     "blog",
-    "music",
-    "entertainment",
-    "two-column",
-    "minimalistic"
+    "music-blog",
+    "minimalistic",
+    "custom-theme",
+    "custom-colors",
+    "responsive"
   ],
   "author": "J.K. Royston",
   "license": "MIT",
