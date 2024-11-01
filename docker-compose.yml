@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: jkroyston
+      WORDPRESS_DB_PASSWORD: bFlSm9slw
+      WORDPRESS_DB_NAME: donaldson_db
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: donaldson_db
+      MYSQL_USER: jkroyston
+      MYSQL_PASSWORD: bFlSm9slw
+      MYSQL_RANDOM_ROOT_PASSWORD: 'root'
+    volumes:
+      - wp_data:/var/lib/mysql
+
+volumes:
+  wp_data:
