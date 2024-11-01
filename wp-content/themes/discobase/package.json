@@ -1,0 +1,26 @@
+{
+  "name": "discobase",
+  "version": "1.0.0",
+  "description": "A record tracking and review database",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch ./sass/main.scss ./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jxhnkndl/wp-discobase.git"
+  },
+  "keywords": [
+    "blog",
+    "music",
+    "entertainment",
+    "two-column",
+    "minimalistic"
+  ],
+  "author": "J.K. Royston",
+  "license": "MIT",
+  "homepage": "https://github.com/jxhnkndl/wp-discobase#readme",
+  "devDependencies": {
+    "sass": "^1.80.5"
+  }
+}
