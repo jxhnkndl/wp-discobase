@@ -1,4 +1,4 @@
-# Themes
+# Dead Themes
 /wp-content/themes/twentytwentytwo
 /wp-content/themes/twentytwentythree
 /wp-content/themes/twentytwentyfour
@@ -14,9 +14,10 @@
 node_modules
 
 # Uploads
-wp-content/uploads
+/wp-content/uploads
 
 # Cache
-/wp-content/cache
-/wp-content/upgrade
-/wp-content/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backups/
+/wp-content/debug.log
