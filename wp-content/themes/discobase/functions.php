@@ -24,7 +24,6 @@ function disco_register_custom_post_types() {
     'hierarchial'       => true
   ));
 
-  remove_post_type_support( 'artist', 'title');
   remove_post_type_support( 'artist', 'editor');
 
   register_post_type('album', array(
@@ -37,7 +36,6 @@ function disco_register_custom_post_types() {
     'hierarchial'       => true
   ));
 
-  remove_post_type_support( 'album', 'title');
   remove_post_type_support( 'album', 'editor');
 }
 
@@ -110,7 +108,7 @@ function disco_register_artist_field_group() {
             'type'              => 'relationship',
             'required'          => 0,
             'post_type'         => array( 'album' ),
-            'taxonomy'          => array( 'genre' ),
+            'filters'           => array( 'search' ),
             'result_elements'   => array( 'post_type', 'post_title' ),
             'multiple'          => false,
           )
@@ -157,40 +155,6 @@ function disco_register_album_field_group() {
       )
     );
 
-    // FIELD: Album genre
-    acf_add_local_field(
-      array(
-        'parent'      => 'group_album',
-        'key'         => 'field_album_genre',
-        'label'       => 'Album Genre',
-        'name'        => 'album_genre',
-        'type'        => 'taxonomy',
-        'taxonomy'    => 'genre',
-        'required'    => 1,
-        'field_type'  => 'multi_select',
-        'allow_null'  => 0,
-        'add_term'    => 0,
-        'multiple'    => 1
-      )
-    );
-
-    // FIELD: Album Type
-    acf_add_local_field(
-      array(
-        'parent'      => 'group_album',
-        'key'         => 'field_album_type',
-        'label'       => 'Album Type',
-        'name'        => 'album_type',
-        'type'        => 'taxonomy',
-        'taxonomy'    => 'album_type',
-        'required'    => 1,
-        'field_type'  => 'radio',
-        'allow_null'  => 0,
-        'add_term'    => 0,
-        'multiple'    => 0
-      )
-    );
-
     // FIELD: Album Artist
     acf_add_local_field(
       array(
@@ -201,7 +165,7 @@ function disco_register_album_field_group() {
         'type'              => 'relationship',
         'required'          => 1,
         'post_type'         => array( 'artist' ),
-        'taxonomy'          => array( 'genre' ),
+        'filters'           => array( 'search' ),
         'result_elements'   => array( 'post_type', 'post_title' ),
         'multiple'          => false,
       )
